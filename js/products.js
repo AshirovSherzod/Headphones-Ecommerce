@@ -1,0 +1,98 @@
+// Concept names, specifications and prices are fictional. Amounts are USD cents.
+export const products = [
+    {
+        "id": "cloud-mini",
+        "name": "Cloud Mini",
+        "category": "Everyday essentials",
+        "price": 7900,
+        "image": "./images/headphones-1.png",
+        "alt": "Compact wireless earbuds with their charging case",
+        "description": "Small enough for every pocket. Clear sound for your daily playlist.",
+        "details": "An easygoing pair for podcasts, calls and the little moments in between. A compact case keeps your listening day moving.",
+        "specs": {
+            "Battery": "6 hours",
+            "Charging": "USB-C",
+            "Devices": "iOS / Android",
+            "Bluetooth": "5.2",
+            "Fit": "In-ear"
+        },
+        "width": 371,
+        "height": 371
+    },
+    {
+        "id": "studio-air",
+        "name": "Studio Air",
+        "category": "Find your own rhythm",
+        "price": 12900,
+        "image": "./images/headphones-2.png",
+        "alt": "Light blue wireless earbuds",
+        "description": "Your favourite tracks, a little closer. Light on your ears. Big on detail.",
+        "details": "Settle into your soundtrack with a comfortable fit and a balanced listening profile, whether you are at your desk or on the move.",
+        "specs": {
+            "Battery": "8 hours",
+            "Charging": "USB-C",
+            "Devices": "iOS / Android",
+            "Bluetooth": "5.3",
+            "Fit": "Open-fit"
+        },
+        "width": 350,
+        "height": 350
+    },
+    {
+        "id": "wave-pro",
+        "name": "Wave Pro",
+        "category": "A moment for yourself",
+        "price": 15900,
+        "image": "./images/headphones-8.png",
+        "alt": "Mint wireless earbuds in an open charging case",
+        "description": "Make space for your music. A fresh take on everyday wireless listening.",
+        "details": "A pocket-sized companion for focused mornings and relaxed evenings. Simple touch controls keep your playlist within reach.",
+        "specs": {
+            "Battery": "9 hours",
+            "Charging": "Wireless",
+            "Devices": "iOS / Android",
+            "Bluetooth": "5.3",
+            "Controls": "Touch"
+        },
+        "width": 500,
+        "height": 499
+    },
+    {
+        "id": "pulse-go",
+        "name": "Pulse Go",
+        "category": "Keep your day moving",
+        "price": 9900,
+        "image": "./images/headphones-4.png",
+        "alt": "Wireless earbuds with a portable charging case",
+        "description": "Press play and get going. An effortless companion for your daily routine.",
+        "details": "From your commute to your afternoon walk, a secure fit and quick charging help keep the soundtrack going.",
+        "specs": {
+            "Battery": "7 hours",
+            "Charging": "USB-C",
+            "Devices": "iOS / Android",
+            "Bluetooth": "5.3",
+            "Fit": "Secure"
+        },
+        "width": 500,
+        "height": 500
+    },
+    {
+        "id": "orbit-max",
+        "name": "Orbit Max",
+        "category": "More room for music",
+        "price": 18900,
+        "image": "./images/headphones-5.png",
+        "alt": "A pair of premium wireless earbuds",
+        "description": "Turn familiar songs into new discoveries. Made for longer listening sessions.",
+        "details": "Give your favourite albums a little more attention with a comfortable design, intuitive controls and a long-lasting listening experience.",
+        "specs": {
+            "Battery": "10 hours",
+            "Charging": "Wireless",
+            "Devices": "iOS / Android",
+            "Bluetooth": "5.4",
+            "Controls": "Touch"
+        },
+        "width": 960,
+        "height": 960
+    }
+];
