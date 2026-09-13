@@ -11,12 +11,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">Sherzod Ashirov <span class="demo-badge">Demo store</span></div>
+        <a class="logo" href="#collection" data-home>Sherzod Ashirov <span class="demo-badge">Demo store</span></a>
         <div class="header-tools">
-        <nav>
-            <a href="">Home</a>
-            <a href="">Contact</a>
-            <a href="">Info</a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="nav-link" href="#collection" data-home aria-current="page">Home</a>
+            <a class="nav-link" href="https://github.com/AshirovSherzod" target="_blank" rel="noopener noreferrer" aria-label="Contact Sherzod on GitHub (opens in a new tab)">Contact <span aria-hidden="true">&#8599;</span></a>
+            <button class="nav-link" id="info-toggle" type="button" aria-haspopup="dialog" aria-controls="info-dialog">Info</button>
         </nav>
         <button id="cart-toggle" class="icon-button cart-toggle" type="button" aria-label="Shopping bag, 0 items" aria-haspopup="dialog" aria-controls="cart-dialog">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l2 14H4L6 7Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
@@ -24,7 +24,7 @@
         </button>
         </div>
     </header>
-    <main class="carousel" aria-label="Headphones" aria-roledescription="carousel">
+    <main id="collection" tabindex="-1" class="carousel" aria-label="Headphones" aria-roledescription="carousel">
         <h1 class="sr-only">Discover your next everyday soundtrack</h1>
         <div class="list">
             <article class="item" data-product-id="cloud-mini" data-price="7900">
@@ -39,7 +39,7 @@
                 <div class="detail">
                     <h2 class="title">Cloud Mini</h2>
                     <p class="des">An easygoing pair for podcasts, calls and the little moments in between. A compact case keeps your listening day moving.</p>
-                    <p class="price">$79.00 <span>USD В· demo price</span></p>
+                    <p class="price">$79.00 <span>USD Р’В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>6 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.2</dd></div><div><dt>Fit</dt><dd>In-ear</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -60,7 +60,7 @@
                 <div class="detail">
                     <h2 class="title">Studio Air</h2>
                     <p class="des">Settle into your soundtrack with a comfortable fit and a balanced listening profile, whether you are at your desk or on the move.</p>
-                    <p class="price">$129.00 <span>USD В· demo price</span></p>
+                    <p class="price">$129.00 <span>USD Р’В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>8 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Fit</dt><dd>Open-fit</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -81,7 +81,7 @@
                 <div class="detail">
                     <h2 class="title">Wave Pro</h2>
                     <p class="des">A pocket-sized companion for focused mornings and relaxed evenings. Simple touch controls keep your playlist within reach.</p>
-                    <p class="price">$159.00 <span>USD В· demo price</span></p>
+                    <p class="price">$159.00 <span>USD Р’В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>9 hours</dd></div><div><dt>Charging</dt><dd>Wireless</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Controls</dt><dd>Touch</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -102,7 +102,7 @@
                 <div class="detail">
                     <h2 class="title">Pulse Go</h2>
                     <p class="des">From your commute to your afternoon walk, a secure fit and quick charging help keep the soundtrack going.</p>
-                    <p class="price">$99.00 <span>USD В· demo price</span></p>
+                    <p class="price">$99.00 <span>USD Р’В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>7 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Fit</dt><dd>Secure</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -123,7 +123,7 @@
                 <div class="detail">
                     <h2 class="title">Orbit Max</h2>
                     <p class="des">Give your favourite albums a little more attention with a comfortable design, intuitive controls and a long-lasting listening experience.</p>
-                    <p class="price">$189.00 <span>USD В· demo price</span></p>
+                    <p class="price">$189.00 <span>USD Р’В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>10 hours</dd></div><div><dt>Charging</dt><dd>Wireless</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.4</dd></div><div><dt>Controls</dt><dd>Touch</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -185,8 +185,23 @@
             </div>
         </div>
     </dialog>
+    <dialog id="info-dialog" class="dialog info-dialog" aria-labelledby="info-title">
+        <div class="dialog-shell">
+            <div class="dialog-header">
+                <div><p class="eyebrow">BEHIND THE EXPERIENCE</p><h2 id="info-title">A little store. A complete journey.</h2></div>
+                <button class="icon-button" type="button" data-close-info aria-label="Close project information"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+            </div>
+            <div class="dialog-body info-body">
+                <p>A headphone shopping concept designed and built by <strong>Sherzod Ashirov</strong>. Explore the collection, find your favourite and try the complete shopping journey.</p>
+                <ol class="info-steps"><li><span>01</span><div><h3>Find your sound</h3><p>Browse five concept products and explore their details.</p></div></li><li><span>02</span><div><h3>Make it yours</h3><p>Add favourites to your bag and adjust the quantities.</p></div></li><li><span>03</span><div><h3>Try the checkout</h3><p>Complete a simulated order using ready-made sample details.</p></div></li></ol>
+                <div class="demo-callout"><strong>Made for demonstration</strong><p>Product names, specifications and prices are fictional. Images are illustrative. No payment is taken, no orders are sent and no personal details are collected.</p></div>
+                <div class="info-links"><a class="button button-primary" href="https://github.com/AshirovSherzod/Headphones-Ecommerce" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a><a class="button button-secondary" href="https://github.com/AshirovSherzod" target="_blank" rel="noopener noreferrer">Meet the creator <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+            </div>
+        </div>
+    </dialog>
     <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
     <script src="./js/main.js"></script>
     <script type="module" src="./js/cart.js"></script>
+    <script type="module" src="./js/navigation.js"></script>
 </body>
 </html>
