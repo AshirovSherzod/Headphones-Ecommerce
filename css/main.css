@@ -500,7 +500,7 @@ header nav {
     overflow-wrap: anywhere;
 }
 
-.carousel.showDetail .list .item .detail .specifications div p:nth-child(1) {
+.carousel.showDetail .list .item .detail .specifications dt {
     font-weight: bold;
 }
 
@@ -662,3 +662,16 @@ header nav {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Product catalogue */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.demo-badge { display: inline-block; margin-left: 8px; padding: 3px 7px; border: 1px solid rgba(105, 62, 255, 0.2); border-radius: 6px; color: #6742b0; font-size: 10px; font-weight: 500; vertical-align: middle; }
+.price { margin: 14px 0; font-size: 24px; font-weight: 500; }
+.price span { font-size: 11px; color: #696174; font-weight: 400; }
+.product-disclaimer { margin-top: 12px; color: #696174; font-size: 11px; line-height: 1.5; }
+.carousel .list .item .intro .title { font-size: 12px; line-height: 1.5; letter-spacing: 0.12em; text-transform: uppercase; color: #6742b0; }
+.carousel .list .item .intro .topic { font-weight: 500; line-height: 1.12; margin: 10px 0 14px; }
+.carousel .list .item .des { line-height: 1.6; }
+.carousel.showDetail .list .item .detail .title { font-weight: 500; line-height: 1.2; margin-bottom: 12px; }
+.carousel .list .item:nth-child(2) .intro .price { opacity: 0; animation: showContent 0.5s 1.2s ease-in-out forwards; }
+.carousel.showDetail .list .item:nth-child(2) .detail .price { opacity: 0; animation: showContent 0.5s 1.3s ease-in-out forwards; }

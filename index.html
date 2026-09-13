@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">Sherzod Ashirov</div>
+        <div class="logo">Sherzod Ashirov <span class="demo-badge">Demo store</span></div>
         <nav>
             <a href="">Home</a>
             <a href="">Contact</a>
@@ -19,252 +19,113 @@
         </nav>
     </header>
     <main class="carousel" aria-label="Headphones" aria-roledescription="carousel">
+        <h1 class="sr-only">Discover your next everyday soundtrack</h1>
         <div class="list">
-            <div class="item">
-                <img src="./images/headphones-1.png" alt="Airphone headphones, product 1">
+            <article class="item" data-product-id="cloud-mini">
+                <img src="./images/headphones-1.png" alt="Compact wireless earbuds with their charging case" draggable="false">
                 <div class="intro">
-                    <div class="title">
-                        DESIGN SLIDER
-                    </div>
-                    <div class="topic">
-                        Airphone
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
-                    </div>
-                    <button class="seeMore" type="button"> See more &#8599;</button>
+                    <p class="title">Everyday essentials</p>
+                    <h2 class="topic">Cloud Mini</h2>
+                    <p class="des">Small enough for every pocket. Clear sound for your daily playlist.</p>
+                    <p class="price">$79.00 <span>USD</span></p>
+                    <button class="seeMore" type="button">Explore product &#8599;</button>
                 </div>
                 <div class="detail">
-                    <div class="title">
-                        Airphone LD
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus deserunt dignissimos voluptatem. Id, nam?
-                    </div>
-                    <div class="specifications">
-                        <div>
-                            <p>Used Time</p>
-                            <p>6 hours</p>
-                        </div>
-                        <div>
-                            <p>Charging port</p>
-                            <p>Type-C</p>
-                        </div>
-                        <div>
-                            <p>Compatible</p>
-                            <p>Android</p>
-                        </div>
-                        <div>
-                            <p>Bluetooth</p>
-                            <p>5.3</p>
-                        </div>
-                        <div>
-                            <p>Controlled</p>
-                            <p>Touch</p>
-                        </div>
-                    </div>
+                    <h2 class="title">Cloud Mini</h2>
+                    <p class="des">An easygoing pair for podcasts, calls and the little moments in between. A compact case keeps your listening day moving.</p>
+                    <p class="price">$79.00 <span>USD · demo price</span></p>
+                    <dl class="specifications"><div><dt>Battery</dt><dd>6 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.2</dd></div><div><dt>Fit</dt><dd>In-ear</dd></div></dl>
                     <div class="checkout">
-                        <button>ADD TO CART</button>
-                        <button>CHECKOUT</button>
+                        <button type="button" data-action="add-to-cart">Add to cart</button>
+                        <button type="button" data-action="buy-now">Demo checkout</button>
                     </div>
+                    <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
-            </div>
-            <div class="item">
-                <img src="./images/headphones-2.png" alt="Airphone headphones, product 2">
+            </article>
+            <article class="item" data-product-id="studio-air">
+                <img src="./images/headphones-2.png" alt="Light blue wireless earbuds" draggable="false">
                 <div class="intro">
-                    <div class="title">
-                        DESIGN SLIDER
-                    </div>
-                    <div class="topic">
-                        Airphone
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
-                    </div>
-                    <button class="seeMore" type="button"> See more &#8599;</button>
+                    <p class="title">Find your own rhythm</p>
+                    <h2 class="topic">Studio Air</h2>
+                    <p class="des">Your favourite tracks, a little closer. Light on your ears. Big on detail.</p>
+                    <p class="price">$129.00 <span>USD</span></p>
+                    <button class="seeMore" type="button">Explore product &#8599;</button>
                 </div>
                 <div class="detail">
-                    <div class="title">
-                        Airphone LD
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus deserunt dignissimos voluptatem. Id, nam?
-                    </div>
-                    <div class="specifications">
-                        <div>
-                            <p>Used Time</p>
-                            <p>6 hours</p>
-                        </div>
-                        <div>
-                            <p>Charging port</p>
-                            <p>Type-C</p>
-                        </div>
-                        <div>
-                            <p>Compatible</p>
-                            <p>Android</p>
-                        </div>
-                        <div>
-                            <p>Bluetooth</p>
-                            <p>5.3</p>
-                        </div>
-                        <div>
-                            <p>Controlled</p>
-                            <p>Touch</p>
-                        </div>
-                    </div>
+                    <h2 class="title">Studio Air</h2>
+                    <p class="des">Settle into your soundtrack with a comfortable fit and a balanced listening profile, whether you are at your desk or on the move.</p>
+                    <p class="price">$129.00 <span>USD · demo price</span></p>
+                    <dl class="specifications"><div><dt>Battery</dt><dd>8 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Fit</dt><dd>Open-fit</dd></div></dl>
                     <div class="checkout">
-                        <button>ADD TO CART</button>
-                        <button>CHECKOUT</button>
+                        <button type="button" data-action="add-to-cart">Add to cart</button>
+                        <button type="button" data-action="buy-now">Demo checkout</button>
                     </div>
+                    <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
-            </div>
-            <div class="item">
-                <img src="./images/headphones-8.png" alt="Airphone headphones, product 3">
+            </article>
+            <article class="item" data-product-id="wave-pro">
+                <img src="./images/headphones-8.png" alt="Mint wireless earbuds in an open charging case" draggable="false">
                 <div class="intro">
-                    <div class="title">
-                        DESIGN SLIDER
-                    </div>
-                    <div class="topic">
-                        Airphone
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
-                    </div>
-                    <button class="seeMore" type="button"> See more &#8599;</button>
+                    <p class="title">A moment for yourself</p>
+                    <h2 class="topic">Wave Pro</h2>
+                    <p class="des">Make space for your music. A fresh take on everyday wireless listening.</p>
+                    <p class="price">$159.00 <span>USD</span></p>
+                    <button class="seeMore" type="button">Explore product &#8599;</button>
                 </div>
                 <div class="detail">
-                    <div class="title">
-                        Airphone LD
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus deserunt dignissimos voluptatem. Id, nam?
-                    </div>
-                    <div class="specifications">
-                        <div>
-                            <p>Used Time</p>
-                            <p>6 hours</p>
-                        </div>
-                        <div>
-                            <p>Charging port</p>
-                            <p>Type-C</p>
-                        </div>
-                        <div>
-                            <p>Compatible</p>
-                            <p>Android</p>
-                        </div>
-                        <div>
-                            <p>Bluetooth</p>
-                            <p>5.3</p>
-                        </div>
-                        <div>
-                            <p>Controlled</p>
-                            <p>Touch</p>
-                        </div>
-                    </div>
+                    <h2 class="title">Wave Pro</h2>
+                    <p class="des">A pocket-sized companion for focused mornings and relaxed evenings. Simple touch controls keep your playlist within reach.</p>
+                    <p class="price">$159.00 <span>USD · demo price</span></p>
+                    <dl class="specifications"><div><dt>Battery</dt><dd>9 hours</dd></div><div><dt>Charging</dt><dd>Wireless</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Controls</dt><dd>Touch</dd></div></dl>
                     <div class="checkout">
-                        <button>ADD TO CART</button>
-                        <button>CHECKOUT</button>
+                        <button type="button" data-action="add-to-cart">Add to cart</button>
+                        <button type="button" data-action="buy-now">Demo checkout</button>
                     </div>
+                    <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
-            </div>
-            <div class="item">
-                <img src="./images/headphones-4.png" alt="Airphone headphones, product 4">
+            </article>
+            <article class="item" data-product-id="pulse-go">
+                <img src="./images/headphones-4.png" alt="Wireless earbuds with a portable charging case" draggable="false">
                 <div class="intro">
-                    <div class="title">
-                        DESIGN SLIDER
-                    </div>
-                    <div class="topic">
-                        Airphone
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
-                    </div>
-                    <button class="seeMore" type="button"> See more &#8599;</button>
+                    <p class="title">Keep your day moving</p>
+                    <h2 class="topic">Pulse Go</h2>
+                    <p class="des">Press play and get going. An effortless companion for your daily routine.</p>
+                    <p class="price">$99.00 <span>USD</span></p>
+                    <button class="seeMore" type="button">Explore product &#8599;</button>
                 </div>
                 <div class="detail">
-                    <div class="title">
-                        Airphone LD
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus deserunt dignissimos voluptatem. Id, nam?
-                    </div>
-                    <div class="specifications">
-                        <div>
-                            <p>Used Time</p>
-                            <p>6 hours</p>
-                        </div>
-                        <div>
-                            <p>Charging port</p>
-                            <p>Type-C</p>
-                        </div>
-                        <div>
-                            <p>Compatible</p>
-                            <p>Android</p>
-                        </div>
-                        <div>
-                            <p>Bluetooth</p>
-                            <p>5.3</p>
-                        </div>
-                        <div>
-                            <p>Controlled</p>
-                            <p>Touch</p>
-                        </div>
-                    </div>
+                    <h2 class="title">Pulse Go</h2>
+                    <p class="des">From your commute to your afternoon walk, a secure fit and quick charging help keep the soundtrack going.</p>
+                    <p class="price">$99.00 <span>USD · demo price</span></p>
+                    <dl class="specifications"><div><dt>Battery</dt><dd>7 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Fit</dt><dd>Secure</dd></div></dl>
                     <div class="checkout">
-                        <button>ADD TO CART</button>
-                        <button>CHECKOUT</button>
+                        <button type="button" data-action="add-to-cart">Add to cart</button>
+                        <button type="button" data-action="buy-now">Demo checkout</button>
                     </div>
+                    <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
-            </div>
-            <div class="item">
-                <img src="./images/headphones-5.png" alt="Airphone headphones, product 5">
+            </article>
+            <article class="item" data-product-id="orbit-max">
+                <img src="./images/headphones-5.png" alt="A pair of premium wireless earbuds" draggable="false">
                 <div class="intro">
-                    <div class="title">
-                        DESIGN SLIDER
-                    </div>
-                    <div class="topic">
-                        Airphone
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
-                    </div>
-                    <button class="seeMore" type="button"> See more &#8599;</button>
+                    <p class="title">More room for music</p>
+                    <h2 class="topic">Orbit Max</h2>
+                    <p class="des">Turn familiar songs into new discoveries. Made for longer listening sessions.</p>
+                    <p class="price">$189.00 <span>USD</span></p>
+                    <button class="seeMore" type="button">Explore product &#8599;</button>
                 </div>
                 <div class="detail">
-                    <div class="title">
-                        Airphone LD
-                    </div>
-                    <div class="des">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatibus deserunt dignissimos voluptatem. Id, nam?
-                    </div>
-                    <div class="specifications">
-                        <div>
-                            <p>Used Time</p>
-                            <p>6 hours</p>
-                        </div>
-                        <div>
-                            <p>Charging port</p>
-                            <p>Type-C</p>
-                        </div>
-                        <div>
-                            <p>Compatible</p>
-                            <p>Android</p>
-                        </div>
-                        <div>
-                            <p>Bluetooth</p>
-                            <p>5.3</p>
-                        </div>
-                        <div>
-                            <p>Controlled</p>
-                            <p>Touch</p>
-                        </div>
-                    </div>
+                    <h2 class="title">Orbit Max</h2>
+                    <p class="des">Give your favourite albums a little more attention with a comfortable design, intuitive controls and a long-lasting listening experience.</p>
+                    <p class="price">$189.00 <span>USD · demo price</span></p>
+                    <dl class="specifications"><div><dt>Battery</dt><dd>10 hours</dd></div><div><dt>Charging</dt><dd>Wireless</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.4</dd></div><div><dt>Controls</dt><dd>Touch</dd></div></dl>
                     <div class="checkout">
-                        <button>ADD TO CART</button>
-                        <button>CHECKOUT</button>
+                        <button type="button" data-action="add-to-cart">Add to cart</button>
+                        <button type="button" data-action="buy-now">Demo checkout</button>
                     </div>
+                    <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
-            </div>
+            </article>
         </div>
         <div class="arrows" role="group" aria-label="Product navigation">
             <button id="prev" type="button" aria-label="Previous product">
