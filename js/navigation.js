@@ -10,7 +10,7 @@ export function initNavigation({ closeDetails }) {
     bindDialogDismiss(infoDialog, "[data-close-info]");
 
     for (const link of document.querySelectorAll("[data-home]")) {
-        link.addEventListener("click", event => {
+        link.addEventListener("click", (event) => {
             event.preventDefault();
             closeDetails();
             document.querySelector("#collection").focus({ preventScroll: true });

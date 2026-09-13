@@ -2,7 +2,7 @@ export const CART_STORAGE_KEY = "headphones-demo-cart:v1";
 export const MAX_QUANTITY = 99;
 
 export function createCartStore(products, storage = null) {
-    const catalogue = new Map(products.map(product => [product.id, product]));
+    const catalogue = new Map(products.map((product) => [product.id, product]));
     const listeners = new Set();
     let quantities = Object.create(null);
     let persistent = Boolean(storage);
@@ -13,7 +13,12 @@ export function createCartStore(products, storage = null) {
             const saved = JSON.parse(storage?.getItem(CART_STORAGE_KEY) || "{}");
             if (!saved || Array.isArray(saved) || typeof saved !== "object") return;
             for (const [id, quantity] of Object.entries(saved)) {
-                if (catalogue.has(id) && Number.isInteger(quantity) && quantity > 0 && quantity <= MAX_QUANTITY) {
+                if (
+                    catalogue.has(id) &&
+                    Number.isInteger(quantity) &&
+                    quantity > 0 &&
+                    quantity <= MAX_QUANTITY
+                ) {
                     quantities[id] = quantity;
                 }
             }
@@ -60,7 +65,13 @@ export function createCartStore(products, storage = null) {
             return true;
         },
         setQuantity(id, quantity) {
-            if (!catalogue.has(id) || !Number.isInteger(quantity) || quantity < 0 || quantity > MAX_QUANTITY) return false;
+            if (
+                !catalogue.has(id) ||
+                !Number.isInteger(quantity) ||
+                quantity < 0 ||
+                quantity > MAX_QUANTITY
+            )
+                return false;
             if (quantity === 0) delete quantities[id];
             else quantities[id] = quantity;
             save();

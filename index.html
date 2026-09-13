@@ -1,119 +1,413 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Headphones E-Commerce</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" media="print" onload="this.media='all'">
-</head>
-<body>
-    <header>
-        <a class="logo" href="#collection" data-home>Sherzod Ashirov <span class="demo-badge">Demo store</span></a>
-        <div class="header-tools">
-        <nav class="site-nav" aria-label="Main navigation">
-            <a class="nav-link" href="#collection" data-home aria-current="page">Home</a>
-            <a class="nav-link" href="https://github.com/AshirovSherzod" target="_blank" rel="noopener noreferrer" aria-label="Contact Sherzod on GitHub (opens in a new tab)">Contact <span aria-hidden="true">&#8599;</span></a>
-            <button class="nav-link" id="info-toggle" type="button" aria-haspopup="dialog" aria-controls="info-dialog">Info</button>
-        </nav>
-        <button id="cart-toggle" class="icon-button cart-toggle" type="button" aria-label="Shopping bag, 0 items" aria-haspopup="dialog" aria-controls="cart-dialog">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l2 14H4L6 7Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-            <span id="cart-count" class="cart-count" aria-hidden="true">0</span>
-        </button>
-        </div>
-    </header>
-    <main id="collection" tabindex="-1" class="carousel" aria-label="Headphones" aria-roledescription="carousel">
-        <h1 class="sr-only">Discover your next everyday soundtrack</h1>
-        <div class="list"></div>
-        <p id="slide-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-        <div class="arrows" role="group" aria-label="Product navigation">
-            <div class="slide-position" aria-hidden="true"><span id="slide-current">01</span><span class="slide-separator">/</span><span id="slide-total">05</span></div>
-            <button id="prev" type="button" aria-label="Previous product">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
-            </button>
-            <button id="back" type="button" hidden disabled>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
-                <span>Back to products</span>
-            </button>
-            <button id="next" type="button" aria-label="Next product">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
-            </button>
-        </div>
-    </main>
-    <dialog id="cart-dialog" class="dialog cart-dialog" aria-labelledby="cart-title">
-        <div class="dialog-shell">
-            <div class="dialog-header">
-                <div><p class="eyebrow">A LITTLE MORE MUSIC</p><h2 id="cart-title" tabindex="-1">Your bag</h2></div>
-                <button class="icon-button" type="button" data-close-dialog aria-label="Close shopping bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Headphones — Find your everyday soundtrack</title>
+        <meta
+            name="description"
+            content="Explore five concept headphones, build your bag and try a simulated checkout. An interactive portfolio project by Sherzod Ashirov."
+        />
+        <meta name="theme-color" content="#693eff" />
+        <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+        <link rel="canonical" href="https://ashirovsherzod.github.io/Headphones-Ecommerce/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Headphones — Find your everyday soundtrack" />
+        <meta
+            property="og:description"
+            content="An interactive shopping concept with a complete demo checkout. Created by Sherzod Ashirov."
+        />
+        <meta property="og:url" content="https://ashirovsherzod.github.io/Headphones-Ecommerce/" />
+        <meta
+            property="og:image"
+            content="https://ashirovsherzod.github.io/Headphones-Ecommerce/images/social-preview.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="The Headphones demo storefront featuring Studio Air, a purple ambient background and arrow navigation."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap"
+            media="print"
+            onload="this.media = 'all'"
+        />
+    </head>
+    <body>
+        <header>
+            <a class="logo" href="#collection" data-home
+                >Sherzod Ashirov <span class="demo-badge">Demo store</span></a
+            >
+            <div class="header-tools">
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a class="nav-link" href="#collection" data-home aria-current="page">Home</a>
+                    <a
+                        class="nav-link"
+                        href="https://github.com/AshirovSherzod"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Contact Sherzod on GitHub (opens in a new tab)"
+                        >Contact <span aria-hidden="true">&#8599;</span></a
+                    >
+                    <button
+                        class="nav-link"
+                        id="info-toggle"
+                        type="button"
+                        aria-haspopup="dialog"
+                        aria-controls="info-dialog"
+                    >
+                        Info
+                    </button>
+                </nav>
+                <button
+                    id="cart-toggle"
+                    class="icon-button cart-toggle"
+                    type="button"
+                    aria-label="Shopping bag, 0 items"
+                    aria-haspopup="dialog"
+                    aria-controls="cart-dialog"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M6 7h12l2 14H4L6 7Z" />
+                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                    </svg>
+                    <span id="cart-count" class="cart-count" aria-hidden="true">0</span>
+                </button>
             </div>
-            <div class="dialog-body">
-                <section data-cart-view="cart">
-                    <div id="cart-empty" class="empty-state"><span class="empty-symbol" aria-hidden="true">&#9835;</span><h3>Your next soundtrack awaits</h3><p>Explore the collection and add a favourite to your bag.</p><button class="button button-primary" type="button" data-close-dialog>Explore headphones</button></div>
-                    <ul id="cart-items" class="cart-items" aria-label="Items in your bag"></ul>
-                    <div id="cart-summary" hidden>
-                        <div class="summary-row"><span>Demo delivery</span><span>Included</span></div>
-                        <div class="summary-row total-row"><span>Total <small>USD</small></span><strong id="cart-total">$0.00</strong></div>
-                        <button id="checkout-button" class="button button-primary full-width" type="button">Continue to demo checkout <span aria-hidden="true">&#8594;</span></button>
-                        <p class="fine-print">A portfolio demo. No real payment or delivery.</p>
+        </header>
+        <main
+            id="collection"
+            tabindex="-1"
+            class="carousel"
+            aria-label="Headphones"
+            aria-roledescription="carousel"
+        >
+            <h1 class="sr-only">Discover your next everyday soundtrack</h1>
+            <div class="list"></div>
+            <p
+                id="slide-status"
+                class="sr-only"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            ></p>
+            <div class="arrows" role="group" aria-label="Product navigation">
+                <div class="slide-position" aria-hidden="true">
+                    <span id="slide-current">01</span><span class="slide-separator">/</span
+                    ><span id="slide-total">05</span>
+                </div>
+                <button id="prev" type="button" aria-label="Previous product">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M19 12H5m7 7-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="back" type="button" hidden disabled>
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M19 12H5m7 7-7-7 7-7" />
+                    </svg>
+                    <span>Back to products</span>
+                </button>
+                <button id="next" type="button" aria-label="Next product">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M5 12h14m-7-7 7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </main>
+        <dialog id="cart-dialog" class="dialog cart-dialog" aria-labelledby="cart-title">
+            <div class="dialog-shell">
+                <div class="dialog-header">
+                    <div>
+                        <p class="eyebrow">A LITTLE MORE MUSIC</p>
+                        <h2 id="cart-title" tabindex="-1">Your bag</h2>
                     </div>
-                    <p id="storage-note" class="fine-print" hidden>Your bag is saved for this visit only because browser storage is unavailable.</p>
-                </section>
-                <section data-cart-view="checkout" hidden>
-                    <div class="demo-callout"><strong>Try the complete experience</strong><p>This checkout uses sample details. No payment is taken and no personal information is needed.</p></div>
-                    <h3 class="section-title">Delivery details</h3>
-                    <div class="sample-address"><strong>Demo Customer</strong><p>123 Sample Street<br>Demo City, 00000</p><span class="sample-label">SAMPLE ADDRESS</span></div>
-                    <h3 class="section-title">Your order</h3>
-                    <div id="checkout-items"></div>
-                    <div class="summary-row"><span>Demo delivery</span><span>Included</span></div>
-                    <div class="summary-row total-row"><span>Total <small>USD</small></span><strong id="checkout-total">$0.00</strong></div>
-                    <button id="place-order" class="button button-primary full-width" type="button">Place demo order <span aria-hidden="true">&#8594;</span></button>
-                    <button class="button button-secondary full-width" type="button" data-view-cart>Back to bag</button>
-                </section>
-                <section data-cart-view="confirmation" class="confirmation" hidden>
-                    <div class="success-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></div>
-                    <p class="eyebrow">THANKS FOR TRYING IT OUT</p><h3>Your demo order is complete.</h3>
-                    <p id="order-reference" class="order-reference"></p><p id="order-total" class="muted"></p>
-                    <p>No payment was taken. This was a simulated order, so nothing will be shipped.</p>
-                    <button class="button button-primary" type="button" data-close-dialog>Keep exploring</button>
-                </section>
+                    <button
+                        class="icon-button"
+                        type="button"
+                        data-close-dialog
+                        aria-label="Close shopping bag"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                        >
+                            <path d="m6 6 12 12M6 18 18 6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="dialog-body">
+                    <section data-cart-view="cart">
+                        <div id="cart-empty" class="empty-state">
+                            <span class="empty-symbol" aria-hidden="true">&#9835;</span>
+                            <h3>Your next soundtrack awaits</h3>
+                            <p>Explore the collection and add a favourite to your bag.</p>
+                            <button class="button button-primary" type="button" data-close-dialog>
+                                Explore headphones
+                            </button>
+                        </div>
+                        <ul id="cart-items" class="cart-items" aria-label="Items in your bag"></ul>
+                        <div id="cart-summary" hidden>
+                            <div class="summary-row">
+                                <span>Demo delivery</span><span>Included</span>
+                            </div>
+                            <div class="summary-row total-row">
+                                <span>Total <small>USD</small></span
+                                ><strong id="cart-total">$0.00</strong>
+                            </div>
+                            <button
+                                id="checkout-button"
+                                class="button button-primary full-width"
+                                type="button"
+                            >
+                                Continue to demo checkout <span aria-hidden="true">&#8594;</span>
+                            </button>
+                            <p class="fine-print">A portfolio demo. No real payment or delivery.</p>
+                        </div>
+                        <p id="storage-note" class="fine-print" hidden>
+                            Your bag is saved for this visit only because browser storage is
+                            unavailable.
+                        </p>
+                    </section>
+                    <section data-cart-view="checkout" hidden>
+                        <div class="demo-callout">
+                            <strong>Try the complete experience</strong>
+                            <p>
+                                This checkout uses sample details. No payment is taken and no
+                                personal information is needed.
+                            </p>
+                        </div>
+                        <h3 class="section-title">Delivery details</h3>
+                        <div class="sample-address">
+                            <strong>Demo Customer</strong>
+                            <p>123 Sample Street<br />Demo City, 00000</p>
+                            <span class="sample-label">SAMPLE ADDRESS</span>
+                        </div>
+                        <h3 class="section-title">Your order</h3>
+                        <div id="checkout-items"></div>
+                        <div class="summary-row">
+                            <span>Demo delivery</span><span>Included</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Total <small>USD</small></span
+                            ><strong id="checkout-total">$0.00</strong>
+                        </div>
+                        <button
+                            id="place-order"
+                            class="button button-primary full-width"
+                            type="button"
+                        >
+                            Place demo order <span aria-hidden="true">&#8594;</span>
+                        </button>
+                        <button
+                            class="button button-secondary full-width"
+                            type="button"
+                            data-view-cart
+                        >
+                            Back to bag
+                        </button>
+                    </section>
+                    <section data-cart-view="confirmation" class="confirmation" hidden>
+                        <div class="success-symbol" aria-hidden="true">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="m5 12 4 4L19 6" />
+                            </svg>
+                        </div>
+                        <p class="eyebrow">THANKS FOR TRYING IT OUT</p>
+                        <h3>Your demo order is complete.</h3>
+                        <p id="order-reference" class="order-reference"></p>
+                        <p id="order-total" class="muted"></p>
+                        <p>
+                            No payment was taken. This was a simulated order, so nothing will be
+                            shipped.
+                        </p>
+                        <button class="button button-primary" type="button" data-close-dialog>
+                            Keep exploring
+                        </button>
+                    </section>
+                </div>
             </div>
-        </div>
-    </dialog>
-    <dialog id="info-dialog" class="dialog info-dialog" aria-labelledby="info-title">
-        <div class="dialog-shell">
-            <div class="dialog-header">
-                <div><p class="eyebrow">BEHIND THE EXPERIENCE</p><h2 id="info-title">A little store. A complete journey.</h2></div>
-                <button class="icon-button" type="button" data-close-info aria-label="Close project information"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+        </dialog>
+        <dialog id="info-dialog" class="dialog info-dialog" aria-labelledby="info-title">
+            <div class="dialog-shell">
+                <div class="dialog-header">
+                    <div>
+                        <p class="eyebrow">BEHIND THE EXPERIENCE</p>
+                        <h2 id="info-title">A little store. A complete journey.</h2>
+                    </div>
+                    <button
+                        class="icon-button"
+                        type="button"
+                        data-close-info
+                        aria-label="Close project information"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                        >
+                            <path d="m6 6 12 12M6 18 18 6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="dialog-body info-body">
+                    <p>
+                        A headphone shopping concept designed and built by
+                        <strong>Sherzod Ashirov</strong>. Explore the collection, find your
+                        favourite and try the complete shopping journey.
+                    </p>
+                    <ol class="info-steps">
+                        <li>
+                            <span>01</span>
+                            <div>
+                                <h3>Find your sound</h3>
+                                <p>Browse five concept products and explore their details.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <div>
+                                <h3>Make it yours</h3>
+                                <p>Add favourites to your bag and adjust the quantities.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <div>
+                                <h3>Try the checkout</h3>
+                                <p>Complete a simulated order using ready-made sample details.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="demo-callout">
+                        <strong>Made for demonstration</strong>
+                        <p>
+                            Product names, specifications and prices are fictional. Images are
+                            illustrative. No payment is taken, no orders are sent and no personal
+                            details are collected.
+                        </p>
+                    </div>
+                    <div class="info-links">
+                        <a
+                            class="button button-primary"
+                            href="https://github.com/AshirovSherzod/Headphones-Ecommerce"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >View source <span aria-hidden="true">&#8599;</span
+                            ><span class="sr-only"> (opens in a new tab)</span></a
+                        ><a
+                            class="button button-secondary"
+                            href="https://github.com/AshirovSherzod"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Meet the creator <span aria-hidden="true">&#8599;</span
+                            ><span class="sr-only"> (opens in a new tab)</span></a
+                        >
+                    </div>
+                </div>
             </div>
-            <div class="dialog-body info-body">
-                <p>A headphone shopping concept designed and built by <strong>Sherzod Ashirov</strong>. Explore the collection, find your favourite and try the complete shopping journey.</p>
-                <ol class="info-steps"><li><span>01</span><div><h3>Find your sound</h3><p>Browse five concept products and explore their details.</p></div></li><li><span>02</span><div><h3>Make it yours</h3><p>Add favourites to your bag and adjust the quantities.</p></div></li><li><span>03</span><div><h3>Try the checkout</h3><p>Complete a simulated order using ready-made sample details.</p></div></li></ol>
-                <div class="demo-callout"><strong>Made for demonstration</strong><p>Product names, specifications and prices are fictional. Images are illustrative. No payment is taken, no orders are sent and no personal details are collected.</p></div>
-                <div class="info-links"><a class="button button-primary" href="https://github.com/AshirovSherzod/Headphones-Ecommerce" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a><a class="button button-secondary" href="https://github.com/AshirovSherzod" target="_blank" rel="noopener noreferrer">Meet the creator <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a></div>
-            </div>
-        </div>
-    </dialog>
-    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-    <template id="product-template">
-        <article class="item" role="group" aria-roledescription="slide">
-            <img draggable="false" decoding="async" alt="">
-            <div class="intro">
-                <p class="title"></p><h2 class="topic"></h2><p class="des"></p>
-                <p class="price"><span class="price-amount"></span> <span>USD</span></p>
-                <button class="seeMore button button-secondary" type="button">Explore product &#8599;</button>
-            </div>
-            <div class="detail">
-                <h2 class="title"></h2><p class="des"></p>
-                <p class="price"><span class="price-amount"></span> <span>USD · demo price</span></p>
-                <dl class="specifications"></dl>
-                <div class="checkout"><button class="button button-primary" type="button" data-action="add-to-cart">Add to cart</button><button class="button button-secondary" type="button" data-action="buy-now">Demo checkout</button></div>
-                <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
-            </div>
-        </article>
-    </template>
-    <noscript><p class="noscript-message">Enable JavaScript to explore this interactive demo. No purchases or payments are made on this site.</p></noscript>
-    <script type="module" src="./js/main.js"></script>
-</body>
+        </dialog>
+        <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+        <template id="product-template">
+            <article class="item" role="group" aria-roledescription="slide">
+                <img draggable="false" decoding="async" alt="" />
+                <div class="intro">
+                    <p class="title"></p>
+                    <h2 class="topic"></h2>
+                    <p class="des"></p>
+                    <p class="price"><span class="price-amount"></span> <span>USD</span></p>
+                    <button class="seeMore button button-secondary" type="button">
+                        Explore product &#8599;
+                    </button>
+                </div>
+                <div class="detail">
+                    <h2 class="title"></h2>
+                    <p class="des"></p>
+                    <p class="price">
+                        <span class="price-amount"></span> <span>USD В· demo price</span>
+                    </p>
+                    <dl class="specifications"></dl>
+                    <div class="checkout">
+                        <button
+                            class="button button-primary"
+                            type="button"
+                            data-action="add-to-cart"
+                        >
+                            Add to cart</button
+                        ><button
+                            class="button button-secondary"
+                            type="button"
+                            data-action="buy-now"
+                        >
+                            Demo checkout
+                        </button>
+                    </div>
+                    <p class="product-disclaimer">
+                        Concept product. Specifications and prices are illustrative.
+                    </p>
+                </div>
+            </article>
+        </template>
+        <noscript
+            ><p class="noscript-message">
+                Enable JavaScript to explore this interactive demo. No purchases or payments are
+                made on this site.
+            </p></noscript
+        >
+        <script type="module" src="./js/main.js"></script>
+    </body>
 </html>

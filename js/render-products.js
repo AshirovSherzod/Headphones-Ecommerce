@@ -19,7 +19,8 @@ export function renderProducts(products, list) {
         item.querySelector(".intro .des").textContent = product.description;
         item.querySelector(".detail .title").textContent = product.name;
         item.querySelector(".detail .des").textContent = product.details;
-        for (const price of item.querySelectorAll(".price-amount")) price.textContent = formatMoney(product.price);
+        for (const price of item.querySelectorAll(".price-amount"))
+            price.textContent = formatMoney(product.price);
         const detail = item.querySelector(".detail");
         detail.id = `details-${product.id}`;
         item.querySelector(".seeMore").setAttribute("aria-controls", detail.id);

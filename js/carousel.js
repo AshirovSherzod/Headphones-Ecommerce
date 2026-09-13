@@ -8,7 +8,7 @@ export function initCarousel(carousel) {
     let isAnimating = false;
     const originalItems = [...listHTML.children];
     const displayOrder = [...originalItems.slice(1), originalItems[0]];
-    const padNumber = number => String(number).padStart(2, "0");
+    const padNumber = (number) => String(number).padStart(2, "0");
 
     // The second item is the visible product in the carousel's CSS layout.
     const activeItem = () => listHTML.children[1];
@@ -22,7 +22,7 @@ export function initCarousel(carousel) {
         const status = document.querySelector("#slide-status");
         if (status.textContent !== announcement) status.textContent = announcement;
 
-        [nextButton, prevButton].forEach(button => {
+        [nextButton, prevButton].forEach((button) => {
             button.disabled = showingDetails;
             // Keep keyboard focus on the arrows while a slide is animating.
             button.setAttribute("aria-disabled", String(isAnimating || showingDetails));
@@ -30,13 +30,16 @@ export function initCarousel(carousel) {
         backButton.hidden = !showingDetails;
         backButton.disabled = !showingDetails;
 
-        Array.from(listHTML.children).forEach(item => {
+        Array.from(listHTML.children).forEach((item) => {
             const isActive = item === activeItem();
             const intro = item.querySelector(".intro");
             const detail = item.querySelector(".detail");
             const seeMore = item.querySelector(".seeMore");
 
-            item.setAttribute("aria-label", `${item.querySelector(".topic").textContent}, ${displayOrder.indexOf(item) + 1} of ${displayOrder.length}`);
+            item.setAttribute(
+                "aria-label",
+                `${item.querySelector(".topic").textContent}, ${displayOrder.indexOf(item) + 1} of ${displayOrder.length}`,
+            );
             item.inert = !isActive;
             item.setAttribute("aria-hidden", String(!isActive));
             intro.inert = !isActive || showingDetails;
@@ -48,7 +51,7 @@ export function initCarousel(carousel) {
         });
     };
 
-    const showSlider = direction => {
+    const showSlider = (direction) => {
         if (isAnimating || carousel.classList.contains("showDetail")) return;
 
         isAnimating = true;
@@ -70,7 +73,7 @@ export function initCarousel(carousel) {
 
         const animations = activeItem().getAnimations({ subtree: true });
         // The CSS timeline is the source of truth, including reduced-motion changes.
-        Promise.allSettled(animations.map(animation => animation.finished)).then(() => {
+        Promise.allSettled(animations.map((animation) => animation.finished)).then(() => {
             isAnimating = false;
             syncControls();
         });
@@ -79,7 +82,7 @@ export function initCarousel(carousel) {
     nextButton.addEventListener("click", () => showSlider("next"));
     prevButton.addEventListener("click", () => showSlider("prev"));
 
-    seeMoreButtons.forEach(button => {
+    seeMoreButtons.forEach((button) => {
         const item = button.closest(".item");
 
         button.addEventListener("click", () => {
@@ -103,7 +106,7 @@ export function initCarousel(carousel) {
     };
 
     backButton.addEventListener("click", closeDetails);
-    carousel.addEventListener("keydown", event => {
+    carousel.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && carousel.classList.contains("showDetail")) {
             event.preventDefault();
             closeDetails();
@@ -114,13 +117,26 @@ export function initCarousel(carousel) {
 
     // Horizontal swipes never take over vertical scrolling or product buttons.
     let swipeStart = null;
-    carousel.addEventListener("pointerdown", event => {
+    carousel.addEventListener("pointerdown", (event) => {
         swipeStart = null;
-        if (!event.isPrimary || !["touch", "pen"].includes(event.pointerType) || event.target.closest("button, a") || carousel.classList.contains("showDetail")) return;
-        swipeStart = { id: event.pointerId, x: event.clientX, y: event.clientY, time: performance.now() };
+        if (
+            !event.isPrimary ||
+            !["touch", "pen"].includes(event.pointerType) ||
+            event.target.closest("button, a") ||
+            carousel.classList.contains("showDetail")
+        )
+            return;
+        swipeStart = {
+            id: event.pointerId,
+            x: event.clientX,
+            y: event.clientY,
+            time: performance.now(),
+        };
     });
-    carousel.addEventListener("pointercancel", () => { swipeStart = null; });
-    carousel.addEventListener("pointerup", event => {
+    carousel.addEventListener("pointercancel", () => {
+        swipeStart = null;
+    });
+    carousel.addEventListener("pointerup", (event) => {
         if (!swipeStart || event.pointerId !== swipeStart.id) return;
         const deltaX = event.clientX - swipeStart.x;
         const deltaY = event.clientY - swipeStart.y;
@@ -130,8 +146,15 @@ export function initCarousel(carousel) {
             showSlider(deltaX < 0 ? "next" : "prev");
         }
     });
-    carousel.addEventListener("keydown", event => {
-        if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || carousel.classList.contains("showDetail")) return;
+    carousel.addEventListener("keydown", (event) => {
+        if (
+            event.altKey ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            carousel.classList.contains("showDetail")
+        )
+            return;
         if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
             showSlider(event.key === "ArrowRight" ? "next" : "prev");

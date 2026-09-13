@@ -2,9 +2,13 @@ import { CART_STORAGE_KEY, MAX_QUANTITY, createCartStore } from "./cart-store.js
 import { bindDialogDismiss, element, formatMoney as money } from "./ui.js";
 
 export function initCart(products) {
-    const byId = new Map(products.map(product => [product.id, product]));
+    const byId = new Map(products.map((product) => [product.id, product]));
     let storage = null;
-    try { storage = window.localStorage; } catch { /* In-memory shopping still works. */ }
+    try {
+        storage = window.localStorage;
+    } catch {
+        /* In-memory shopping still works. */
+    }
     const store = createCartStore(products, storage);
     const dialog = document.querySelector("#cart-dialog");
     const title = document.querySelector("#cart-title");
@@ -34,7 +38,11 @@ export function initCart(products) {
         for (const section of dialog.querySelectorAll("[data-cart-view]")) {
             section.hidden = section.dataset.cartView !== view;
         }
-        title.textContent = { cart: "Your bag", checkout: "Demo checkout", confirmation: "All done" }[view];
+        title.textContent = {
+            cart: "Your bag",
+            checkout: "Demo checkout",
+            confirmation: "All done",
+        }[view];
         if (focus && dialog.open) title.focus();
     }
 
@@ -62,12 +70,25 @@ export function initCart(products) {
             image.src = product.image;
             image.alt = product.alt;
             const content = element("div", "cart-row-content");
-            content.append(element("h3", "", product.name), element("p", "muted", `${money(product.price)} each`));
+            content.append(
+                element("h3", "", product.name),
+                element("p", "muted", `${money(product.price)} each`),
+            );
             const controls = element("div", "quantity-control");
-            const minus = actionButton("decrease", `Decrease ${product.name} quantity`, "в€’", product.id);
+            const minus = actionButton(
+                "decrease",
+                `Decrease ${product.name} quantity`,
+                "в€’",
+                product.id,
+            );
             const count = element("span", "quantity-value", quantity);
             count.setAttribute("aria-label", `Quantity ${quantity}`);
-            const plus = actionButton("increase", `Increase ${product.name} quantity`, "+", product.id);
+            const plus = actionButton(
+                "increase",
+                `Increase ${product.name} quantity`,
+                "+",
+                product.id,
+            );
             plus.disabled = quantity >= MAX_QUANTITY;
             controls.append(minus, count, plus);
             const remove = actionButton("remove", `Remove ${product.name}`, "Remove", product.id);
@@ -76,7 +97,10 @@ export function initCart(products) {
             row.append(image, content, element("strong", "cart-line-price", money(subtotal)));
             rows.append(row);
             const summaryRow = element("div", "summary-row");
-            summaryRow.append(element("span", "", `${product.name} Г— ${quantity}`), element("strong", "", money(subtotal)));
+            summaryRow.append(
+                element("span", "", `${product.name} Г— ${quantity}`),
+                element("strong", "", money(subtotal)),
+            );
             summary.append(summaryRow);
         }
 
@@ -95,7 +119,7 @@ export function initCart(products) {
         return true;
     }
 
-    document.querySelector(".list").addEventListener("click", event => {
+    document.querySelector(".list").addEventListener("click", (event) => {
         const button = event.target.closest("[data-action]");
         if (!button || button.closest("[inert]")) return;
         const id = button.closest(".item").dataset.productId;
@@ -104,20 +128,28 @@ export function initCart(products) {
     });
 
     cartButton.addEventListener("click", () => openCart());
-    document.querySelector("#checkout-button").addEventListener("click", () => showView("checkout"));
-    dialog.addEventListener("click", event => {
+    document
+        .querySelector("#checkout-button")
+        .addEventListener("click", () => showView("checkout"));
+    dialog.addEventListener("click", (event) => {
         if (event.target.closest("[data-view-cart]")) showView("cart");
         const action = event.target.closest("[data-cart-action]");
         if (!action) return;
-        const item = store.getSnapshot().items.find(item => item.product.id === action.dataset.productId);
+        const item = store
+            .getSnapshot()
+            .items.find((item) => item.product.id === action.dataset.productId);
         if (!item) return;
         const id = item.product.id;
         const kind = action.dataset.cartAction;
         if (kind === "remove") store.remove(id);
         else store.setQuantity(id, item.quantity + (kind === "increase" ? 1 : -1));
         // Rendering replaces rows; restore focus to the corresponding control.
-        const replacement = [...dialog.querySelectorAll("[data-cart-action]")].find(button =>
-            button.dataset.productId === id && button.dataset.cartAction === kind && !button.disabled);
+        const replacement = [...dialog.querySelectorAll("[data-cart-action]")].find(
+            (button) =>
+                button.dataset.productId === id &&
+                button.dataset.cartAction === kind &&
+                !button.disabled,
+        );
         (replacement || dialog.querySelector("[data-cart-action]:not(:disabled)") || title).focus();
     });
 
@@ -127,13 +159,15 @@ export function initCart(products) {
     document.querySelector("#place-order").addEventListener("click", () => {
         const snapshot = store.getSnapshot();
         if (!snapshot.items.length || view !== "checkout") return;
-        document.querySelector("#order-reference").textContent = `DEMO-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
-        document.querySelector("#order-total").textContent = `${snapshot.itemCount} items В· ${money(snapshot.total)}`;
+        document.querySelector("#order-reference").textContent =
+            `DEMO-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
+        document.querySelector("#order-total").textContent =
+            `${snapshot.itemCount} items В· ${money(snapshot.total)}`;
         store.clear();
         showView("confirmation");
     });
 
-    window.addEventListener("storage", event => {
+    window.addEventListener("storage", (event) => {
         if (event.key === CART_STORAGE_KEY || event.key === null) store.reload();
     });
     store.subscribe(render);

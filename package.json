@@ -1,0 +1,25 @@
+{
+    "name": "headphones-ecommerce-demo",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "description": "An interactive headphone storefront with a persistent bag and simulated checkout.",
+    "engines": {
+        "node": ">=22"
+    },
+    "scripts": {
+        "dev": "node scripts/serve.mjs",
+        "start": "node scripts/serve.mjs",
+        "test": "node --test tests/unit/cart-store.test.js",
+        "test:e2e": "playwright test",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "check": "npm run format:check && npm test",
+        "build": "node scripts/build.mjs"
+    },
+    "devDependencies": {
+        "@axe-core/playwright": "4.13.0",
+        "@playwright/test": "1.63.0",
+        "prettier": "3.9.6"
+    }
+}
