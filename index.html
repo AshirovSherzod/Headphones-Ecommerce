@@ -12,16 +12,22 @@
 <body>
     <header>
         <div class="logo">Sherzod Ashirov <span class="demo-badge">Demo store</span></div>
+        <div class="header-tools">
         <nav>
             <a href="">Home</a>
             <a href="">Contact</a>
             <a href="">Info</a>
         </nav>
+        <button id="cart-toggle" class="icon-button cart-toggle" type="button" aria-label="Shopping bag, 0 items" aria-haspopup="dialog" aria-controls="cart-dialog">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l2 14H4L6 7Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+            <span id="cart-count" class="cart-count" aria-hidden="true">0</span>
+        </button>
+        </div>
     </header>
     <main class="carousel" aria-label="Headphones" aria-roledescription="carousel">
         <h1 class="sr-only">Discover your next everyday soundtrack</h1>
         <div class="list">
-            <article class="item" data-product-id="cloud-mini">
+            <article class="item" data-product-id="cloud-mini" data-price="7900">
                 <img src="./images/headphones-1.png" alt="Compact wireless earbuds with their charging case" draggable="false">
                 <div class="intro">
                     <p class="title">Everyday essentials</p>
@@ -33,7 +39,7 @@
                 <div class="detail">
                     <h2 class="title">Cloud Mini</h2>
                     <p class="des">An easygoing pair for podcasts, calls and the little moments in between. A compact case keeps your listening day moving.</p>
-                    <p class="price">$79.00 <span>USD · demo price</span></p>
+                    <p class="price">$79.00 <span>USD В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>6 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.2</dd></div><div><dt>Fit</dt><dd>In-ear</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -42,7 +48,7 @@
                     <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
             </article>
-            <article class="item" data-product-id="studio-air">
+            <article class="item" data-product-id="studio-air" data-price="12900">
                 <img src="./images/headphones-2.png" alt="Light blue wireless earbuds" draggable="false">
                 <div class="intro">
                     <p class="title">Find your own rhythm</p>
@@ -54,7 +60,7 @@
                 <div class="detail">
                     <h2 class="title">Studio Air</h2>
                     <p class="des">Settle into your soundtrack with a comfortable fit and a balanced listening profile, whether you are at your desk or on the move.</p>
-                    <p class="price">$129.00 <span>USD · demo price</span></p>
+                    <p class="price">$129.00 <span>USD В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>8 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Fit</dt><dd>Open-fit</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -63,7 +69,7 @@
                     <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
             </article>
-            <article class="item" data-product-id="wave-pro">
+            <article class="item" data-product-id="wave-pro" data-price="15900">
                 <img src="./images/headphones-8.png" alt="Mint wireless earbuds in an open charging case" draggable="false">
                 <div class="intro">
                     <p class="title">A moment for yourself</p>
@@ -75,7 +81,7 @@
                 <div class="detail">
                     <h2 class="title">Wave Pro</h2>
                     <p class="des">A pocket-sized companion for focused mornings and relaxed evenings. Simple touch controls keep your playlist within reach.</p>
-                    <p class="price">$159.00 <span>USD · demo price</span></p>
+                    <p class="price">$159.00 <span>USD В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>9 hours</dd></div><div><dt>Charging</dt><dd>Wireless</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Controls</dt><dd>Touch</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -84,7 +90,7 @@
                     <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
             </article>
-            <article class="item" data-product-id="pulse-go">
+            <article class="item" data-product-id="pulse-go" data-price="9900">
                 <img src="./images/headphones-4.png" alt="Wireless earbuds with a portable charging case" draggable="false">
                 <div class="intro">
                     <p class="title">Keep your day moving</p>
@@ -96,7 +102,7 @@
                 <div class="detail">
                     <h2 class="title">Pulse Go</h2>
                     <p class="des">From your commute to your afternoon walk, a secure fit and quick charging help keep the soundtrack going.</p>
-                    <p class="price">$99.00 <span>USD · demo price</span></p>
+                    <p class="price">$99.00 <span>USD В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>7 hours</dd></div><div><dt>Charging</dt><dd>USB-C</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.3</dd></div><div><dt>Fit</dt><dd>Secure</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -105,7 +111,7 @@
                     <p class="product-disclaimer">Concept product. Specifications and prices are illustrative.</p>
                 </div>
             </article>
-            <article class="item" data-product-id="orbit-max">
+            <article class="item" data-product-id="orbit-max" data-price="18900">
                 <img src="./images/headphones-5.png" alt="A pair of premium wireless earbuds" draggable="false">
                 <div class="intro">
                     <p class="title">More room for music</p>
@@ -117,7 +123,7 @@
                 <div class="detail">
                     <h2 class="title">Orbit Max</h2>
                     <p class="des">Give your favourite albums a little more attention with a comfortable design, intuitive controls and a long-lasting listening experience.</p>
-                    <p class="price">$189.00 <span>USD · demo price</span></p>
+                    <p class="price">$189.00 <span>USD В· demo price</span></p>
                     <dl class="specifications"><div><dt>Battery</dt><dd>10 hours</dd></div><div><dt>Charging</dt><dd>Wireless</dd></div><div><dt>Devices</dt><dd>iOS / Android</dd></div><div><dt>Bluetooth</dt><dd>5.4</dd></div><div><dt>Controls</dt><dd>Touch</dd></div></dl>
                     <div class="checkout">
                         <button type="button" data-action="add-to-cart">Add to cart</button>
@@ -140,6 +146,47 @@
             </button>
         </div>
     </main>
+    <dialog id="cart-dialog" class="dialog cart-dialog" aria-labelledby="cart-title">
+        <div class="dialog-shell">
+            <div class="dialog-header">
+                <div><p class="eyebrow">A LITTLE MORE MUSIC</p><h2 id="cart-title" tabindex="-1">Your bag</h2></div>
+                <button class="icon-button" type="button" data-close-dialog aria-label="Close shopping bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+            </div>
+            <div class="dialog-body">
+                <section data-cart-view="cart">
+                    <div id="cart-empty" class="empty-state"><span class="empty-symbol" aria-hidden="true">&#9835;</span><h3>Your next soundtrack awaits</h3><p>Explore the collection and add a favourite to your bag.</p><button class="button button-primary" type="button" data-close-dialog>Explore headphones</button></div>
+                    <ul id="cart-items" class="cart-items" aria-label="Items in your bag"></ul>
+                    <div id="cart-summary" hidden>
+                        <div class="summary-row"><span>Demo delivery</span><span>Included</span></div>
+                        <div class="summary-row total-row"><span>Total <small>USD</small></span><strong id="cart-total">$0.00</strong></div>
+                        <button id="checkout-button" class="button button-primary full-width" type="button">Continue to demo checkout <span aria-hidden="true">&#8594;</span></button>
+                        <p class="fine-print">A portfolio demo. No real payment or delivery.</p>
+                    </div>
+                    <p id="storage-note" class="fine-print" hidden>Your bag is saved for this visit only because browser storage is unavailable.</p>
+                </section>
+                <section data-cart-view="checkout" hidden>
+                    <div class="demo-callout"><strong>Try the complete experience</strong><p>This checkout uses sample details. No payment is taken and no personal information is needed.</p></div>
+                    <h3 class="section-title">Delivery details</h3>
+                    <div class="sample-address"><strong>Demo Customer</strong><p>123 Sample Street<br>Demo City, 00000</p><span class="sample-label">SAMPLE ADDRESS</span></div>
+                    <h3 class="section-title">Your order</h3>
+                    <div id="checkout-items"></div>
+                    <div class="summary-row"><span>Demo delivery</span><span>Included</span></div>
+                    <div class="summary-row total-row"><span>Total <small>USD</small></span><strong id="checkout-total">$0.00</strong></div>
+                    <button id="place-order" class="button button-primary full-width" type="button">Place demo order <span aria-hidden="true">&#8594;</span></button>
+                    <button class="button button-secondary full-width" type="button" data-view-cart>Back to bag</button>
+                </section>
+                <section data-cart-view="confirmation" class="confirmation" hidden>
+                    <div class="success-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></div>
+                    <p class="eyebrow">THANKS FOR TRYING IT OUT</p><h3>Your demo order is complete.</h3>
+                    <p id="order-reference" class="order-reference"></p><p id="order-total" class="muted"></p>
+                    <p>No payment was taken. This was a simulated order, so nothing will be shipped.</p>
+                    <button class="button button-primary" type="button" data-close-dialog>Keep exploring</button>
+                </section>
+            </div>
+        </div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
     <script src="./js/main.js"></script>
+    <script type="module" src="./js/cart.js"></script>
 </body>
 </html>
