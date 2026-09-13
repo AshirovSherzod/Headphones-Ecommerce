@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Headphones E-Commerce</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" media="print" onload="this.media='all'">
 </head>
 <body>
     <header>
@@ -15,10 +18,10 @@
             <a href="">Info</a>
         </nav>
     </header>
-    <div class="carousel">
+    <main class="carousel" aria-label="Headphones" aria-roledescription="carousel">
         <div class="list">
             <div class="item">
-                <img src="./images/headphones-1.png" alt="">
+                <img src="./images/headphones-1.png" alt="Airphone headphones, product 1">
                 <div class="intro">
                     <div class="title">
                         DESIGN SLIDER
@@ -29,7 +32,7 @@
                     <div class="des">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
                     </div>
-                    <button class="seeMore"> See more &#8599</button>
+                    <button class="seeMore" type="button"> See more &#8599;</button>
                 </div>
                 <div class="detail">
                     <div class="title">
@@ -67,7 +70,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="./images/headphones-2.png" alt="">
+                <img src="./images/headphones-2.png" alt="Airphone headphones, product 2">
                 <div class="intro">
                     <div class="title">
                         DESIGN SLIDER
@@ -78,7 +81,7 @@
                     <div class="des">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
                     </div>
-                    <button class="seeMore"> See more &#8599</button>
+                    <button class="seeMore" type="button"> See more &#8599;</button>
                 </div>
                 <div class="detail">
                     <div class="title">
@@ -116,7 +119,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="./images/headphones-8.png" alt="">
+                <img src="./images/headphones-8.png" alt="Airphone headphones, product 3">
                 <div class="intro">
                     <div class="title">
                         DESIGN SLIDER
@@ -127,7 +130,7 @@
                     <div class="des">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
                     </div>
-                    <button class="seeMore"> See more &#8599</button>
+                    <button class="seeMore" type="button"> See more &#8599;</button>
                 </div>
                 <div class="detail">
                     <div class="title">
@@ -165,7 +168,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="./images/headphones-4.png" alt="">
+                <img src="./images/headphones-4.png" alt="Airphone headphones, product 4">
                 <div class="intro">
                     <div class="title">
                         DESIGN SLIDER
@@ -176,7 +179,7 @@
                     <div class="des">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
                     </div>
-                    <button class="seeMore"> See more &#8599</button>
+                    <button class="seeMore" type="button"> See more &#8599;</button>
                 </div>
                 <div class="detail">
                     <div class="title">
@@ -214,7 +217,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="./images/headphones-5.png" alt="">
+                <img src="./images/headphones-5.png" alt="Airphone headphones, product 5">
                 <div class="intro">
                     <div class="title">
                         DESIGN SLIDER
@@ -225,7 +228,7 @@
                     <div class="des">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ea veritatis exercitationem recusandae eaque placeat.
                     </div>
-                    <button class="seeMore"> See more &#8599</button>
+                    <button class="seeMore" type="button"> See more &#8599;</button>
                 </div>
                 <div class="detail">
                     <div class="title">
@@ -263,12 +266,19 @@
                 </div>
             </div>
         </div>
-        <div class="arrows">
-            <button id="prev"><</button>
-            <button id="back">Go Back &#8599</button>
-            <button id="next">></button>
+        <div class="arrows" role="group" aria-label="Product navigation">
+            <button id="prev" type="button" aria-label="Previous product">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
+            </button>
+            <button id="back" type="button" hidden disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
+                <span>Back to products</span>
+            </button>
+            <button id="next" type="button" aria-label="Next product">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </button>
         </div>
-    </div>
+    </main>
     <script src="./js/main.js"></script>
 </body>
 </html>
