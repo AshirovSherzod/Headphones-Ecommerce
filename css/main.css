@@ -148,9 +148,12 @@ header nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: min(400px, 50%);
+    --intro-width: min(400px, 50%);
+    /* Keep the hover shadow inside the scrollport without narrowing the text. */
+    left: -16px;
+    width: calc(var(--intro-width) + 32px);
     max-height: 100%;
-    padding: 8px;
+    padding: 24px;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -625,7 +628,7 @@ header nav {
     }
 
     .carousel .list .item .intro {
-        width: 50%;
+        --intro-width: 50%;
     }
 
     .carousel .list .item .intro .title {
@@ -1328,9 +1331,9 @@ body > header {
         transform: none;
     }
     .carousel .list .item .intro {
-        top: 40%;
-        width: 100%;
-        max-height: 60%;
+        --intro-width: 100%;
+        top: calc(40% - 16px);
+        max-height: calc(60% + 16px);
         transform: none;
     }
     .carousel .list .item .intro .topic {
